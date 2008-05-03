@@ -1,0 +1,25 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1
+author=pascal.corpet.2001 | Pascal CORPET
+csum=
+host=82.229.193.37
+name=Site.PageFootMenu
+rev=10
+targets=Site.PageFootMenu,Site.GroupAttributes,Site.Admin
+text=* %25item class=browse accesskey='$[ak_view]'%25[[{$FullName} | $[View] ]]%0a(:if auth edit:)%0a* %25item rel=nofollow class=edit accesskey='$[ak_edit]'%25 [[{*$Name}?action=edit | $[Edit] ]]%0a(:ifend:)%0a(:if !authid:)%0a*[[{*$Name}?action=connect | $[Connecter] ]]%0a(:ifend:)%0a* %25item rel=nofollow class=diff accesskey='$[ak_history]'%25[[{*$Name}?action=diff | $[History] ]]%0a*%25newwin%25[[{*$Name}?action=source | $[Source] ]]%0a(:if auth upload:)%0a* %25item rel=nofollow class=upload accesskey='$[ak_attach]'%25[[{$FullName}?action=upload | $[Attach] ]]%0a(:if:)%0a(:if auth admin:)%0a* [[{*$Name}?action=attr| $[Attributes] ]]%0a* [[{*$Group}.GroupAttributes?action=admin | $[Group Attributes] ]]%0a* [[Site.Admin?action=admin | Admin]]%0a(:ifend:)%0a[[%3c%3c]]%0a->''Dernière modification le {*$LastModified}''
+time=1174140767
+author:1174140767=pascal.corpet.2001 | Pascal CORPET
+diff:1174140767:1172781227:=1d0%0a%3c * %25item class=browse accesskey='$[ak_view]'%25[[{$FullName} | $[View] ]]%0a3c2%0a%3c * %25item rel=nofollow class=edit accesskey='$[ak_edit]'%25 [[{*$Name}?action=edit | $[Edit] ]]%0a---%0a> *[[{*$Name}?action=edit | $[Edit] ]]%0a8c7%0a%3c * %25item rel=nofollow class=diff accesskey='$[ak_history]'%25[[{*$Name}?action=diff | $[History] ]]%0a---%0a> *[[{*$Name}?action=diff | $[History] ]]%0a10,12c9,11%0a%3c (:if auth upload:)%0a%3c * %25item rel=nofollow class=upload accesskey='$[ak_attach]'%25[[{$FullName}?action=upload | $[Attach] ]]%0a%3c (:if:)%0a---%0a> *[[{*$Name}?action=upload | $[Attach File] ]]%0a> * [[Site.Search?q=link={*$FullName} | $[Backlinks] ]]%0a> *[[Site.Search?q={*$Group}/ | $[List Group] ]]%0a14,16c13,14%0a%3c * [[{*$Name}?action=attr| $[Attributes] ]]%0a%3c * [[{*$Group}.GroupAttributes?action=admin | $[Group Attributes] ]]%0a%3c * [[Site.Admin?action=admin | Admin]]%0a---%0a> *[[{*$Name}?action=attr| $[Attributes] ]]%0a> *[[{*$Group}.GroupAttributes| $[Group Attributes] ]]%0a
+host:1174140767=82.229.193.37
+author:1172781227=
+diff:1172781227:1172781127:=4c4%0a%3c (:if !authid:)%0a---%0a> (:if !auth edit:)%0a
+host:1172781227=82.229.193.37
+author:1172781127=
+diff:1172781127:1172781108:=17c17%0a%3c ->''Dernière modification le {*$LastModified}''%0a\ No newline at end of file%0a---%0a> ->''$[Page last modified on] {*$LastModified}''%0a\ No newline at end of file%0a
+host:1172781127=82.229.193.37
+author:1172781108=
+diff:1172781108:1172780715:=4,6d3%0a%3c (:if !auth edit:)%0a%3c *[[{*$Name}?action=connect | $[Connecter] ]]%0a%3c (:ifend:)%0a
+host:1172781108=82.229.193.37
+author:1172780715=
+diff:1172780715:1115303640:=1d0%0a%3c (:if auth edit:)%0a3d1%0a%3c (:ifend:)%0a
+host:1172780715=82.229.193.37

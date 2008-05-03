@@ -1,0 +1,32 @@
+./wikifarm/pmwiki/					=> code de pmwiki + ajouts wikifarm
+./wikifarm/<groupetruc>/local/		=> conf
+./wikifarm/<groupetruc>/uploads/	=> fichiers
+./wikifarm/<groupetruc>/wiki.d/		=> pages
+./wikifarm/install					=> fichiers à installer dans ./wikifarm/pmwiki/
+
+cd /home/web/wikifarm
+
+wget http://pmwiki.org/pub/pmwiki/pmwiki-latest.tgz
+untar
+mv pmwiki-????? => pmwiki
+
+wget http://pmwiki.org/pub/pmwiki/i18n/i18n-fr.zip
+(cd pmwiki && unzip ../i18n-fr.zip)
+
+wget http://www.pmwiki.org/pmwiki/uploads/Cookbook/gemini.zip
+(cd pmwiki/pub/skins/ && unzip ../../../gemini.zip)
+
+wget http://www.pmwiki.org/pmwiki/uploads/Cookbook/triad.zip
+(cd pmwiki/pub/skins/ && unzip ../../../triad.zip)
+
+wget http://www.pmwiki.org/pmwiki/uploads/Cookbook/monobook.zip
+(cd pmwiki/pub/skins/ && unzip ../../../monobook.zip)
+
+chown -R web:web .
+chmod -R go-w .
+chmod g+ws */wiki.d */uploads
+
+cp farmconfig.php farmmap.txt => pmwiki/local
+cp -r cookbook (sans tests.php) => main/
+cp install/Site.* pmwiki/wikilib.d/
+

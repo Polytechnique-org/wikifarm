@@ -1,0 +1,16 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1
+author=pascal.corpet.2001 | Pascal CORPET
+csum=
+host=82.229.193.37
+name=Site.PageActions
+rev=25
+targets=Site.PageActions,Site.GroupAttributes,Site.Admin
+text=* %25item class=browse accesskey='$[ak_view]'%25[[{$FullName} | $[View] ]]%0a(:if auth edit:)%0a* %25item rel=nofollow class=edit accesskey='$[ak_edit]'%25 [[{*$Name}?action=edit | $[Edit] ]]%0a(:ifend:)%0a(:if !authid:)%0a*[[{*$Name}?action=connect | $[Connecter] ]]%0a(:ifend:)%0a* %25item rel=nofollow class=diff accesskey='$[ak_history]'%25[[{*$Name}?action=diff | $[History] ]]%0a*%25newwin%25[[{*$Name}?action=source | $[Source] ]]%0a(:if auth upload:)%0a* %25item rel=nofollow class=upload accesskey='$[ak_attach]'%25[[{$FullName}?action=upload | $[Attach] ]]%0a(:if:)%0a(:if auth admin:)%0a* [[{*$Name}?action=attr| $[Attributes] ]]%0a* [[{*$Group}.GroupAttributes?action=admin | $[Group Attributes] ]]%0a* [[Site.Admin?action=admin | Admin]]%0a(:ifend:)
+time=1174123478
+author:1174123478=pascal.corpet.2001 | Pascal CORPET
+diff:1174123478:1172795241:=3,11c3%0a%3c * %25item rel=nofollow class=edit accesskey='$[ak_edit]'%25 [[{*$Name}?action=edit | $[Edit] ]]%0a%3c (:ifend:)%0a%3c (:if !authid:)%0a%3c *[[{*$Name}?action=connect | $[Connecter] ]]%0a%3c (:ifend:)%0a%3c * %25item rel=nofollow class=diff accesskey='$[ak_history]'%25[[{*$Name}?action=diff | $[History] ]]%0a%3c *%25newwin%25[[{*$Name}?action=source | $[Source] ]]%0a%3c (:if auth upload:)%0a%3c * %25item rel=nofollow class=upload accesskey='$[ak_attach]'%25[[{$FullName}?action=upload | $[Attach] ]]%0a---%0a> * %25item rel=nofollow class=edit accesskey='$[ak_edit]'%25[[{$FullName}?action=edit | $[Edit] ]]%0a13,17c5,9%0a%3c (:if auth admin:)%0a%3c * [[{*$Name}?action=attr| $[Attributes] ]]%0a%3c * [[{*$Group}.GroupAttributes?action=admin | $[Group Attributes] ]]%0a%3c * [[Site.Admin?action=admin | Admin]]%0a%3c (:ifend:)%0a\ No newline at end of file%0a---%0a> * %25item rel=nofollow class=diff accesskey='$[ak_history]'%25[[{$FullName}?action=diff | $[History] ]]%0a> (:if auth upload:)%0a> * %25item rel=nofollow class=upload accesskey='$[ak_attach]'%25[[{$FullName}?action=upload | $[Attach] ]]%0a> (:if:)%0a> * %25item rel=nofollow class=print accesskey='$[ak_print]'%25[[{$FullName}?action=print | $[Print] ]]%0a\ No newline at end of file%0a
+host:1174123478=82.229.193.37
+author:1172795241=
+diff:1172795241:1142198002:=2d1%0a%3c (:if auth edit:)%0a4d2%0a%3c (:if:)%0a
+host:1172795241=82.229.193.37
