@@ -1,32 +1,22 @@
-./wikifarm/pmwiki/					=> code de pmwiki + ajouts wikifarm
+Organisation des fichiers
+=========================
+
+./wikifarm/pmwiki/			=> code de pmwiki + ajouts wikifarm
+./wikifarm/install			=> fichiers à installer dans ./wikifarm/pmwiki/
+./wikifarm/install/NomDuWiki		=> template servant à la création d'un nouveau wiki
 ./wikifarm/<groupetruc>/local/		=> conf
 ./wikifarm/<groupetruc>/uploads/	=> fichiers
 ./wikifarm/<groupetruc>/wiki.d/		=> pages
-./wikifarm/install					=> fichiers Ã  installer dans ./wikifarm/pmwiki/
 
-cd /home/web/wikifarm
-
-wget http://pmwiki.org/pub/pmwiki/pmwiki-latest.tgz
-untar
-mv pmwiki-????? => pmwiki
-
-wget http://pmwiki.org/pub/pmwiki/i18n/i18n-fr.zip
-(cd pmwiki && unzip ../i18n-fr.zip)
-
-wget http://www.pmwiki.org/pmwiki/uploads/Cookbook/gemini.zip
-(cd pmwiki/pub/skins/ && unzip ../../../gemini.zip)
-
-wget http://www.pmwiki.org/pmwiki/uploads/Cookbook/triad.zip
-(cd pmwiki/pub/skins/ && unzip ../../../triad.zip)
-
-wget http://www.pmwiki.org/pmwiki/uploads/Cookbook/monobook.zip
-(cd pmwiki/pub/skins/ && unzip ../../../monobook.zip)
-
+Droits généraux :
 chown -R web:web .
 chmod -R go-w .
-chmod g+ws */wiki.d */uploads
+chmod g+ws ./*/wiki.d ./*/uploads
 
-cp farmconfig.php farmmap.txt => pmwiki/local
-cp -r cookbook (sans tests.php) => main/
-cp install/Site.* pmwiki/wikilib.d/
+Création d'un nouveau champ dans la ferme wiki
+==============================================
 
+- lancer : ./install/newfield.sh
+- modifier $XnetWikiGroup dans ./<grouptruc>/local/config.php pour permettre au groupe de gérer son wiki
+- ajouter d'une entrée dans la conf apache
+- relancer apache : /etc/init.d/apache2 reload
