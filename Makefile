@@ -3,7 +3,7 @@ SKINS = gemini monobook triad
 LOCALS = farmconfig.php farmmap.txt
 WIKILIBDS = Site.AuthForm Site.PageActions Site.PageFootMenu
 
-all: pmwiki i18n-fr skins local cookbook wikilib.d
+all: pmwiki i18n-fr skins local cookbook wikilib.d rights
 
 pmwiki:
 	rm -f pmwiki-latest.tgz
@@ -40,3 +40,6 @@ pmwiki/wikilib.d/.xorg:
 	(cd pmwiki/wikilib.d && rm -f $(WIKILIBDS) && touch .xorg)
 pmwiki/wikilib.d/%: install/wikilib.d/%
 	cp $< $@
+
+rights:
+	@chmod g+ws install/NomDuWiki/uploads install/NomDuWiki/wiki.d
