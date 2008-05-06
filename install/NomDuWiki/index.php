@@ -1,1 +1,1 @@
-<?php include('../pmwiki/pmwiki.php');
+<?php include('../pmwiki/pmwiki.php'); ?>
