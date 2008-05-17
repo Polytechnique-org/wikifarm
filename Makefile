@@ -43,3 +43,4 @@ pmwiki/wikilib.d/%: install/wikilib.d/%
 
 rights:
 	@chmod g+ws install/NomDuWiki/uploads install/NomDuWiki/wiki.d
+	@chmod g+w install/NomDuWiki/local/webconfig.php
