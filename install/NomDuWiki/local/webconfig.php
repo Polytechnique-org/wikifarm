@@ -5,4 +5,3 @@
  $DefaultPasswords['read'] = 'public';
  $DefaultPasswords['edit'] = 'admin';
 ?>
-
