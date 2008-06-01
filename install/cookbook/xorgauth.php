@@ -39,7 +39,7 @@ Markup('xnetpage','inline','/\\(:xnetpage\\s*(.*?):\\)/e', "XnetPage('$1')");
 function XnetPage($page) {
   global $XnetWikiGroup;
   if (!$XnetWikiGroup) return;
-  return Keep('<iframe style="width:100%;height:400px;border:none" src="http://dev.polytechnique.net/~x2001corpet/'.($_SESSION['xorgauth']?'login/':'').$XnetWikiGroup.'/'.$page.'"></iframe>');
+  return Keep('<iframe style="width:100%;height:400px;border:none" src="http://www.polytechnique.net/'.($_SESSION['xorgauth']?'login/':'').$XnetWikiGroup.'/'.$page.'"></iframe>');
 }
 
 // Récupère les droits au niveau du dossier (Group PmWiki)
@@ -86,7 +86,7 @@ function XorgAuthConnectPlatal() {
  @session_start();
  if (isset($_GET['auth']) && !$_SESSION['xorgauth'] && $_SESSION['challenge']) {
 	$tohash = '1'.$_SESSION['challenge'].'6e9c9fa9bac23541fe67697c4eff5be6';
-	$fields = explode(',','forlife,nom,prenom,promo,grpauth');
+	$fields = explode(',','forlife,nom,prenom,promo,grpauth,perms');
 	foreach ($fields as $f) if (isset($_GET[$f])) {
 		$tohash .= $_GET[$f];
 	}
@@ -110,6 +110,10 @@ function XorgAuthTestPassword($password) {
   if (!$password) {
     return true;
   }
+  if ($_SESSION['perms'] == 'admin') {
+	// administrateur du site d'authentification et donc super user ici aussi
+	return true;
+  }
   $parts = explode(' ',$password);
   foreach ($parts as $pass) {
   	if ($pass == 'all' || $pass == 'public') {
@@ -130,7 +134,8 @@ function XorgAuthTestPassword($password) {
   }
   return false;
 }
- 
+
+// test if user has admin rights on this wiki field
 function XorgAuthIsSiteAdmin() {
   global $DefaultPasswords;
   return XorgAuthTestPassword($DefaultPasswords['admin']);
@@ -139,6 +144,7 @@ function XorgAuthIsSiteAdmin() {
 // fonction d'authentification : appellée avant tout accès à une page
 function XorgAuth($pagename, $level, $authprompt, $since) {
  global $XnetWikiGroup;
+  // user was authenticaed to another site, but the site has changed
   if (isset($_SESSION['authsite']) && $XnetWikiGroup != $_SESSION['authsite']) {
     XorgAuthConnectPlatal();
    	return false;
