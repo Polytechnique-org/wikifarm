@@ -1,10 +1,10 @@
 version=pmwiki-2.1.27 ordered=1 urlencoded=1
-agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1
-author=pascal.corpet.2001 | Pascal CORPET
+agent=Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_5_4; fr-fr) AppleWebKit/525.13 (KHTML, like Gecko) Version/3.1 Safari/525.13
+author=damien.bobillot.2002 | Damien BOBILLOT
 csum=
-host=82.229.193.37
+host=81.57.2.151
 name=Site.AuthForm
-rev=4
+rev=5
 targets=
 text=Vous n'avez pas les droits nécessaires.%0a%0a(:if !connected:)%0a(:input form {$Name}:)%0a(:input submit value='Se Connecter':)%0a(:input hidden name=action value='connect':)%0a(:input hidden name=oldaction value='{$action}':)%0a(:input end:)%0a(:if:)
 time=1173544662
