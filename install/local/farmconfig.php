@@ -14,6 +14,7 @@ include_once("$FarmD/cookbook/geoloc.php");
 include_once("$FarmD/cookbook/chat.php");
 include_once("$FarmD/cookbook/faq.php");
 include_once("$FarmD/cookbook/fieldadmin.php");
+include_once("$FarmD/cookbook/sitemap.php");
 
 
 ##---------------Francisation ------------------------------------
