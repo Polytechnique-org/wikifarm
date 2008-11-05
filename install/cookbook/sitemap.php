@@ -46,6 +46,7 @@ SDV($HandleActions['sitemap'], 'HandleSitemap'); # it is not usefull to have bot
 SDV($SitemapDelay, 3600); # Seconds to wait after last edit set to -1 to disable automatic generation
 SDV($SitemapSquelch, 12*3600); # Squelch between generations of sitemap
 
+$RobotActions['sitemap'] = 1;
 
 SDVA($SitemapSearchPatterns, array());
 $SitemapSearchPatterns[] = '!\.(All)?Recent(Changes|Uploads|Pages)$!';
