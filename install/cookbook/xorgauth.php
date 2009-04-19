@@ -34,7 +34,7 @@ $HTMLHeaderFmt['xorgcustomauth'] = '<script type="text/javascript">
 
 Markup('[[~|','<[[~','/\\[\\[~(.*?)\|(.*?)\\]\\]/e',"Keep('<a href=\"http://www.polytechnique.org/profile/$1\" class=\"popup2\">$2</a>')");
 
-Markup('xorgpage','inline','/\\(:xorgpage\\s*(.*?):\\)/e', "Keep('<iframe style=\"width:100%;height:400px;border:none\" src=\"http://dev.m4x.org/~x2001corpet/$1\"></iframe>')");
+Markup('xorgpage','inline','/\\(:xorgpage\\s*(.*?):\\)/e', "Keep('<iframe style=\"width:100%;height:400px;border:none\" src=\"http://www.polytechnique.org/$1\"></iframe>')");
 Markup('xnetpage','inline','/\\(:xnetpage\\s*(.*?):\\)/e', "XnetPage('$1')");
 function XnetPage($page) {
   global $XnetWikiGroup;
