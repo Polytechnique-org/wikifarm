@@ -20,3 +20,12 @@ Création d'un nouveau champ dans la ferme wiki
 - modifier $XnetWikiGroup dans ./<grouptruc>/local/config.php pour permettre au groupe de gérer son wiki
 - ajouter d'une entrée dans la conf apache
 - relancer apache : /etc/init.d/apache2 reload
+
+Plugins installés (et groupes à les utiliser)
+=============================================
+
+- PmGallery : khomiss
+- Galleria  -- not functional due to the auth script
+- RyeVoting : x-us
+- flash2    : khomiss
+
